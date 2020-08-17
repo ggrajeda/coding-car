@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+
+<head>
+
+<link rel="stylesheet" type="text/css" href="Montserrat.css">
+
+<title>Control Panel</title>
+	
+<style>	
+
+.Play{}
+
+.Learn{}
+
+.GetCoding{}
+
+.blockDisplay {
+  background-color: lightgreen;
+  width: 136px;
+  border: 7px solid lavender;
+  padding: 20px;
+  margin: 25px;
+}
+
+.buttonGroup {
+  background-color: #3fc380;
+  border: 1px solid lightgreen;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: 'Montserrat'; font-weight: 900;    
+  font-size: 16px;
+  cursor: pointer;
+  float: left;
+  width:160px;
+  height:50px;
+  margin-bottom: 10px;
+}
+
+.buttonGroup:hover {
+    background-color: #b4eeb4;
+}
+
+body {
+	background-color: lavender;    
+	text-align:center;
+	width: 100%;
+	color:darkslategray;
+	font-family: 'Montserrat'; font-weight: 900;
+}
+
+.buttonClick {
+	width: 200px;
+	font-family: 'Montserrat'; font-weight: 900;
+	margin:0 auto;
+	display: inline-block;
+ 	padding: 32px 10px;
+ 	font-size: 24px;
+ 	cursor: pointer;
+ 	text-align: center;
+ 	text-decoration: none;
+ 	outline: none;
+ 	color: white;
+ 	background-color: tomato;
+	border: none;
+	border-radius: 15px;
+	box-shadow: 0 4px #ee5121;
+}
+
+.buttonClick:active {
+  box-shadow: 0 2px #ee5121;
+  transform: translateY(2px);
+}
+
+.buttonClickL {
+	width: 200px;
+	font-family: 'Montserrat'; font-weight: 900;
+	margin:0 auto;
+	display: inline-block;
+ 	padding: 32px 10px;
+ 	font-size: 24px;
+ 	cursor: pointer;
+ 	text-align: center;
+ 	text-decoration: none;
+ 	outline: none;
+ 	color: white;
+ 	background-color: #3fc380;
+	border: none;
+	border-radius: 15px;
+	box-shadow: 0 4px mediumseagreen;
+}
+
+.buttonClickL:active {
+  box-shadow: 0 2px mediumseagreen;
+  transform: translateY(2px);
+}
+
+.buttonClickC {
+	width: 200px;
+	font-family: 'Montserrat'; font-weight: 900;
+	margin:0 auto;
+	display: inline-block;
+ 	padding: 32px 10px;
+ 	font-size: 24px;
+ 	cursor: pointer;
+ 	text-align: center;
+ 	text-decoration: none;
+ 	outline: none;
+ 	color: white;
+ 	background-color: #446cb3;
+	border: none;
+	border-radius: 15px;
+	box-shadow: 0 4px #2c3e60;
+}
+
+.buttonClickC:active {
+  box-shadow: 0 2px #2c3e60;
+  transform: translateY(2px);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<br>
+<br>
+<br>
+
+<div>
+<center style = "margin:auto; background-color:white; width: 850px;">
+<h1 style="text-align:center; padding:70px 35px 15px; color:black; font-family:'Montserrat'; font-weight: 900; font-size:300%;">Welcome to the Coding Car!</h1>
+<hr style="margin-left:0; border:0; width:850px; color:mediumpurple; background-color:thistle; height:14px; padding:0px; margin-bottom:0px;">
+<hr style="margin-left:0; border:0; width:850px; color:mediumpurple; background-color:lavender; height:14px; padding: 0px; margin-top:0px;">
+</center>
+</div>
+
+<br><br>
+
+<div class="Play">
+<center style = "margin:auto; background-color:coral; width: 850px;">
+
+<h1 style="text-align:left; color:#303030; font-family: 'Montserrat'; font-weight: 900; padding:70px 35px 15px; font-size: 250%;">Play</h1>
+
+<hr style="margin-left:0; border:0; width:850px; color:thistle; background-color:thistle; height:14px; padding:0px; margin-bottom:0px;">
+<hr style="margin-left:0; border:0; width:850px; color:lavender; background-color:lavender; height:14px; padding: 0px; margin-top:0px;">
+
+<br>
+<h2 style="color:#303030; font-family:'Montserrat'; font-weight: 900; padding:10px; font-size: 200%;">Control</h2>
+
+<button onclick="go()" class="buttonClick">Go</button>
+<button class="buttonClick" style = "width:10px; visibility:hidden;"/>
+<button onclick="stop()" class="buttonClick">Stop</button>
+
+<h2 style="color:#303030; font-family:'Montserrat'; font-weight: 900; padding:25px; font-size: 200%;">Direction</h2>
+
+<button onclick="go()" class="buttonClick">Forwards</button>
+<button class="buttonClick" style = "width:10px; visibility:hidden;"/>
+<button onclick="stop()" class="buttonClick">Backwards</button>
+
+<h2 style="color:#303030; font-family:'Montserrat'; font-weight: 900; padding:25px; font-size: 200%;">Steering</h2>
+
+<button onclick="left()" class="buttonClick">Left</button>
+<button class="buttonClick" style = "width:10px; visibility:hidden;"/>
+<button onclick="straight()" class="buttonClick">Straight</button>
+<button class="buttonClick" style = "width:10px; visibility:hidden;"/>
+<button onclick="right()" class="buttonClick">Right</button>
+
+
+<h2 style="color:#303030; font-family:'Montserrat'; font-weight: 900; padding:25px; font-size: 200%;">Headlights</h2>
+
+<button class="buttonClick">Lights On</button>
+<button class="buttonClick" style = "width:10px; visibility:hidden;"/>
+<button class="buttonClick">Lights Off</button>
+
+<h2 style="color:#303030; font-family:'Montserrat'; font-weight: 900; padding:25px; font-size: 200%;">Horn</h2>
+
+<button class="buttonClick" style="margin-bottom:70px">Beep! Beep!</button>
+
+<hr style="margin-left:0; border:0; width:850px; color:thistle; background-color:thistle; height:14px; padding:0px; margin-bottom:0px;">
+<hr style="margin-left:0; border:0; width:850px; color:lavender; background-color:lavender; height:14px; padding: 0px; margin-top:0px; margin-bottom:0px;">
+
+</center>
+</div>
+
+<div class="Learn">
+<center style = "margin:auto; background-color:lightgreen; width: 850px;">
+
+<h1 style="text-align:left; color:darkslategray; font-family: 'Montserrat'; font-weight: 900; padding:70px 35px 15px; font-size: 250%;">Learn</h1>
+
+<hr style="margin-left:0; border:0; width:850px; color:thistle; background-color:thistle; height:14px; padding:0px; margin-bottom:0px;">
+<hr style="margin-left:0; border:0; width:850px; color:thistle; background-color:lavender; height:14px; padding: 0px; margin-top:0px;">
+
+<h2 style="color:darkslategray; font-family:'Montserrat'; font-weight: 900; padding:25px; font-size: 200%;">Library</h2>
+
+<button class="buttonGroup" style="margin-left:25px;" value="args" onclick="insertText('txt', 'go();');">go();</button>
+<button class="buttonGroup" value="args" onclick="insertText('txt', 'stop();');">stop();</button>
+<button class="buttonGroup" value="args" onclick="insertText('txt', 'turnLeft();');">turnLeft();</button>
+<button class="buttonGroup" value="args" onclick="insertText('txt', 'goStraight();');">goStraight();</button>
+<button class="buttonGroup" style="margin-right:25px;" value="args" onclick="insertText('txt', 'turnRight();');">turnRight();</button>
+<button class="buttonGroup" style="margin-left:25px;" value="args" onclick="insertText('txt', 'lightsOn();');">lightsOn();</button>
+<button class="buttonGroup" value="args" onclick="insertText('txt', 'lightsOff();');">lightsOff();</button>
+<button class="buttonGroup" value="args" onclick="insertText('txt', 'beep();');">beep();</button>
+<button class="buttonGroup"> </button>
+<button class="buttonGroup"> </button>
+
+<p style="clear:both"><br></p>
+
+      <div class = "blockDisplay" style="font-family:'Montserrat'; font-weight: 900; color:slategray;" id="txt">Press a button</div>
+<br>
+<button class="buttonClickL" onclick="sendContents('txt');">Go!</button>
+
+<br><br><br>
+
+<hr style="margin-left:0; border:0; width:850px; color:thistle; background-color:thistle; height:14px; padding:0px; margin-bottom:0px;">
+<hr style="margin-left:0; border:0; width:850px; color:thistle; background-color:lavender; height:14px; padding: 0px; margin-top:0px; margin-bottom:0px;">
+
+</center>
+</div>
+
+<div class= "GetCoding">
+<center style = "margin:auto; background-color:cornflowerblue; width: 850px;">
+
+<h1 style="text-align:left; color:#253340; font-family: 'Montserrat'; font-weight: 900; padding:70px 35px 15px; font-size: 250%;">Get Coding!</h1>
+
+<hr style="margin-left:0; border:0; width:850px; color:thistle; background-color:thistle; height:14px; padding:0px; margin-bottom:0px;">
+<hr style="margin-left:0; border:0; width:850px; color:lavender; background-color:lavender; height:14px; padding: 0px; margin-top:0px;">
+
+<textarea id="master" spellcheck="false" style="resize:none; font-size: 150%; background-color:black; color:white; border:none; margin:100px; margin-bottom:50px; margin-top:50px; width: 400px; height:300px;">
+
+</textarea>
+
+<br>
+<button class="buttonClickC" onclick="sendEditedContents('master');">Go!</button>
+
+<br><br><br>
+
+<hr style="margin-left:0; border:0; width:850px; color:thistle; background-color:thistle; height:14px; padding:0px; margin-bottom:0px;">
+<hr style="margin-left:0; border:0; width:850px; color:lavender; background-color:lavender; height:14px; padding: 0px; margin-top:0px; margin-bottom:0px;">
+
+</center>
+</div>
+
+<br><br>
+
+    <script type="text/javascript">
+      var deviceID    = "270036000547353138383138";
+      var accessToken = "6d3be2842baac48e25bb59c22ec80c3ca151e0ea";
+      var setFunc = "setsteering";
+      var getFunc = "getsteering";
+
+      window.setInterval(function() {
+        requestURL = "https://api.spark.io/v1/devices/" + deviceID + "/" + getFunc + "/?access_token=" + accessToken;
+        $.getJSON(requestURL, function(json) {
+                 document.getElementById("curPos").innerHTML = json.result;
+                 document.getElementById("curPos").style.fontSize = "28px";
+                 });
+      }, 1000);
+     
+      function left() {
+        sparkSetPos("turnLeft();");
+      }
+
+	function right() {
+        sparkSetPos("turnRight();");
+      }
+
+	function straight() {
+        sparkSetPos("goStraight();");
+      }
+
+      function go() {
+        sparkSetPos("go();");
+      }
+
+      function stop() {
+        sparkSetPos("stop();");
+      }
+
+      function sparkSetPos(newValue) {
+	var requestURL = "https://api.spark.io/v1/devices/" +deviceID + "/" + setFunc + "/";
+        $.post( requestURL, { params: newValue, access_token: accessToken });
+      }
+
+	function insertText(elemID, text)
+      {
+        var elem = document.getElementById(elemID);
+        elem.innerHTML = text;
+	elem.value = text;
+      }
+
+	function sendContents(elemID){
+	  var elem = document.getElementById(elemID);
+	  sparkSetPos(elem.value.trim());
+	}
+
+	
+	function sendEditedContents(elemID){
+	  var elem = document.getElementById(elemID);
+	  sparkSetPos(":" + elem.value.trim());
+	}
+
+    </script>
+
+</body>
+</html>
+
